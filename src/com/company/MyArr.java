@@ -4,27 +4,28 @@ public class MyArr {
     private int[] arr;
     private int size;
     public MyArr(int size){
-        this.size = size;
+        this.size = 0  ;
         this.arr = new int[size];
     }
-    public int getElement(int index){
-        return this.arr[index];
+    public void display(){
+        for (int i = 0; i <this.size ; i++) {
+            System.out.println(this.arr[i]);
+        }
     }
-    public void setElement(int index, int elem){
-        this.arr[index]=elem;
-    }
-    public int[] deleteElement(int elem){
+    public void delete(int value){
         int i =0;
-        for (i = 0;i<this.size;i ++) {
-            if (this.arr[i]==elem)break;
+        for (i = 0; i <this.size ;i ++) {
+            if (this.arr[i]==value)break;
         }
         for (int j = i; j <this.size-1 ; j++) {
             this.arr[j]=this.arr[j+1];
         }
         this.size--;
-        return this.arr;
     }
-    public int getSize(){
-        return this.size;
+    public void insert(int value){
+        arr[this.size]=value;
+        this.size++;
     }
+
+
 }
