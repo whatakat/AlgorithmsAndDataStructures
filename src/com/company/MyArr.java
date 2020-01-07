@@ -26,6 +26,16 @@ public class MyArr {
         arr[this.size]=value;
         this.size++;
     }
+    public boolean find(int value){
+        int i;
+        for (i = 0; i <this.size ; i++) {
+            if (this.arr[i]==value)break;
+        }
+        if (i==this.size)
+            return false;
+        else
+            return true;
+    }
 
 
 }
