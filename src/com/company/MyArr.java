@@ -26,6 +26,7 @@ public class MyArr {
         arr[this.size]=value;
         this.size++;
     }
+    //liner method
     public boolean find(int value){
         int i;
         for (i = 0; i <this.size ; i++) {
