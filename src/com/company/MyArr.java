@@ -37,6 +37,25 @@ public class MyArr {
         else
             return true;
     }
+    //binary find
+    public boolean binaryFind(int value){
+        int low = 0;
+        int high = this.size-1;
+        int mid;
+        while (low<high){
+            mid=(low+high)/2;
+            if (value==this.arr[mid]){
+                return true;
+            }else {
+                if (value<this.arr[mid]){
+                    high = mid;
+                }else {
+                    low=mid+1;
+                }
+            }
+        }
+        return false;
+    }
 
 
 }
