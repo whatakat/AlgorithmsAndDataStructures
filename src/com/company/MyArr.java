@@ -1,7 +1,8 @@
 package com.company;
 
 public class MyArr {
-    private int[] arr;
+    //work with primitive
+   /* private int[] arr;
     private int size;
     public MyArr(int size){
         this.size = 0  ;
@@ -63,7 +64,13 @@ public class MyArr {
             }
         }
         return false;
+    }*/
+//reference data type
+    private Person[] arr;
+    private int size;
+    public MyArr(int size){
+        this.size = 0;
+        this.arr= new Person[size];
     }
-
 
 }
