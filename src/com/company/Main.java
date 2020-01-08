@@ -18,17 +18,7 @@ public class Main {
         arr.insert(10);
         arr.insert(1);
         int search = 8;
-        System.out.println("output array");
-        arr.display();
-        if (arr.find(search)){
-            arr.delete(search);
-
-            System.err.println("element: "+search+" has been deleted");
-        }else {
-            System.out.println("can't find element "+search);
-        }
-        System.out.println("output new array");
-        arr.display();
+        System.out.println(arr.binaryFind(search));
 
 
 
