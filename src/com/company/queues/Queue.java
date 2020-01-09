@@ -1,5 +1,9 @@
 package com.company.queues;
 
+import com.sun.source.tree.BreakTree;
+
+import java.util.Arrays;
+
 public class Queue {
     private int maxSize;
     private int[] queue;
@@ -28,7 +32,7 @@ public class Queue {
         queue[++rear]=i;
         items++;
     }
-    public long remove(){
+    public int remove(){
         int temp = queue[front++];
         if (front==maxSize)
             front=0;
