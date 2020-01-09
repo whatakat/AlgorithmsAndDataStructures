@@ -118,5 +118,33 @@ public class MyArr {
         this.arr[b] = tmp;
     }
 */
+    //SELECTION SORTING
+    /*
+    public void sortSelect(){
+        int out, in, mark;
+        for (out = 0;  out<this.size ; out++) {
+            mark =out;
+            for ( in = out+1; in <this.size ; in++) {
+                if (this.arr[in]<this.arr[mark]){
+                    mark = in;
+                }
+            }
+            change(out, mark);
+            
+        }
+    }*/
+    public void sortInsertObj(){
+        int in, out;
+        for (out = 1; out <this.size ; out++) {
+            Person tmp = this.arr[out];
+            in = out;
+            while (in>0&&this.arr[in-1].getName().compareTo(tmp.getName())>0){
+                this.arr[in] = this.arr[in-1];
+                --in;
+            }
+            this.arr[in]=tmp;
+
+        }
+    }
 
 }
