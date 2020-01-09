@@ -1,6 +1,6 @@
 package com.company;
 
-import java.util.Arrays;
+import com.company.sortArr.MyArr;
 
 public class Main {
 

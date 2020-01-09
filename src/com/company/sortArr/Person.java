@@ -1,4 +1,4 @@
-package com.company;
+package com.company.sortArr;
 
 public class Person {
     private String name;
