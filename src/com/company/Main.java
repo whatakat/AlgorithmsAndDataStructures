@@ -23,8 +23,9 @@ public class Main {
         MyArr myArr = new MyArr(size);
         myArr.insert("Vasya", 10);
         myArr.insert("Igor",15);
+        myArr.insert("Leo", 5);
         myArr.display();
-        myArr.delete("Igor");
+        myArr.sortInsertObj();
         myArr.display();
 
 
