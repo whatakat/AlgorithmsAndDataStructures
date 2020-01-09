@@ -6,16 +6,16 @@ public class PriorityQueue {
     private int items;
 
     public PriorityQueue(int i){
-        maxSize = 1;
+        maxSize = i;
         queueArray = new int[maxSize];
         items = 0;
     }
     public void insert(int item){
         int i;
-        if (item == 0)
+        if (items == 0)
             queueArray[items++] = item;
         else {
-            for ( i = items-1; i >=0 ; i--) {
+            for ( i = items-1 ; i >=0 ; i--) {
                 if (item>queueArray[i])
                     queueArray[i+1]=queueArray[i];
                 else
