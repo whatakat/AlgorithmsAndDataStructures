@@ -17,6 +17,12 @@ public class LinkedList {
         Link temp = first;
         first = first.next;
         return temp;
-
+    }
+    public void display(){
+        Link current = first;
+        while (current!=null){
+            current.display();
+            current = current.next;
+        }
     }
 }
