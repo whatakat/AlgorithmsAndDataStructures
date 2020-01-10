@@ -35,4 +35,21 @@ public class LinkedList {
         }
         return current;
     }
+    public Link delete(String name){
+        Link current = first;
+        Link previous = first;
+        while (current.name != name){
+            if (current.next==null)
+                return null;
+            else {
+                previous = current;
+                current= current.next;
+            }
+        }
+        if (current == first)
+            first = first.next;
+        else
+            previous.next = current.next;
+        return current;
+    }
 }
