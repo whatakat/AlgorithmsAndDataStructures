@@ -25,4 +25,14 @@ public class LinkedList {
             current = current.next;
         }
     }
+    public Link find(String name){
+        Link current = first;
+        while (current.name != name){
+            if (current.next == null)
+                return null;
+            else
+                current = current.next;
+        }
+        return current;
+    }
 }
