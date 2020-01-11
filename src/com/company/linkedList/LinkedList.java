@@ -62,4 +62,14 @@ public class LinkedList {
         }
         last = newLink;
     }
+    public Link getFirst(){
+        return first;
+    }
+    public void setFirst(Link first){
+        this.first = first;
+    }
+    public LinkIterator getIterator(LinkedList list){
+        return new LinkIterator(this);
+
+    }
 }
