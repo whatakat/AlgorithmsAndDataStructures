@@ -2,6 +2,7 @@ package com.company.linkedList;
 
 public class LinkedList {
     private Link first;
+    private Link last;
     public LinkedList(){
         first = null;
     }
@@ -51,5 +52,14 @@ public class LinkedList {
         else
             previous.next = current.next;
         return current;
+    }
+    public void insertLast(String name, int age){
+        Link newLink = new Link(name, age);
+        if (this.isEmpty()){
+            first=newLink;
+        }else {
+            last.next = newLink;
+        }
+        last = newLink;
     }
 }
