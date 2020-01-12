@@ -20,12 +20,12 @@ public class MyArrRecursion {
         else
             if (low>high)
                 return size;
-            else
-                if (arr[curIn]<searchKey)
-                    return recBinaryFind(searchKey,curIn+1, high);
+            else {
+                if (arr[curIn] < searchKey)
+                    return recBinaryFind(searchKey, curIn + 1, high);
                 else
-                    return recBinaryFind(searchKey, low, curIn-1);
-
+                    return recBinaryFind(searchKey, low, curIn - 1);
+            }
     }
     public void insert(int value){
         int i;
@@ -33,7 +33,7 @@ public class MyArrRecursion {
             if (this.arr[i]>value);
             break;
         }
-        for (int j = this.size; j <i ; j--) {
+        for (int j = this.size; j >i ; j--) {
             this.arr[j] = this.arr[j-1];
         }
         this.arr[i] = value;
