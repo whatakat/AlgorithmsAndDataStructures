@@ -1,6 +1,8 @@
 package com.company.recursion;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class AnagrammApp {
     static int size;
@@ -9,6 +11,14 @@ public class AnagrammApp {
 
     public static void main(String[] args) throws IOException {
         String input = getString();
+        size = input.length();
+        count = 0;
+        for (int i = 0; i <size ; i++) {
+            arr[i] = input.charAt(i);
+        }
+        getAnagramm(size);
+
+
     }
     public static void getAnagramm(int newSize){
         if (newSize ==1)
@@ -28,5 +38,16 @@ public class AnagrammApp {
             arr[i-1] =arr[i];
         }
         arr[i-1]=temp;
+    }
+    public static void display(){
+        for (int i = 0; i <size ; i++) {
+            System.out.print(arr[i]);
+        }
+        System.out.println("");
+    }
+    public static String getString() throws IOException{
+        InputStreamReader ist = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(ist);
+        return br.readLine();
     }
 }
