@@ -59,4 +59,13 @@ public class Tree {
             inOrder(rootNode.rightChild);
         }
     }
+    public Node min(){
+        Node current, last = null;
+        current = root;
+        while (current!=null){
+            last = current;
+            current = current.leftChild;
+        }
+        return last;
+    }
 }
