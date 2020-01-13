@@ -52,4 +52,11 @@ public class Tree {
     public void displayTree(){
 
     }
+    private void inOrder(Node rootNode){
+        if (rootNode!=null){
+            inOrder(rootNode.leftChild);
+            rootNode.display();
+            inOrder(rootNode.rightChild);
+        }
+    }
 }
