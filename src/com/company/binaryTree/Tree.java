@@ -46,9 +46,6 @@ public class Tree {
         }
 
     }
-    public boolean delete(int id){
-
-    }
     public void displayTree(){
 
     }
@@ -102,24 +99,36 @@ public class Tree {
             } else {
                 parent.rightChild = null;
             }
-        } else if (current.rightChild == null) {
-            if (current == root) {
+        }
+        else if (current.rightChild == null) {
+            if (current == null) {
                 root = current.leftChild;
             } else if (isLeftChild) {
                 parent.leftChild = current.leftChild;
             } else {
                 parent.rightChild = current.leftChild;
             }
-        } else if (current.leftChild == null) {
-            if (current == root) {
+        }
+        else if (current.leftChild == null) {
+            if (current == null) {
                 root = current.rightChild;
             } else if (isLeftChild) {
                 parent.leftChild = current.rightChild;
             } else {
                 parent.rightChild = current.rightChild;
             }
+        }else{
+            Node successor = getSuccessor(current);
+            if (current == root){
+                root = successor;
+            }else if (isLeftChild){
+                parent.leftChild = successor;
+            }else {
+                parent.rightChild = successor;
+            }
+            successor.leftChild=current.leftChild;
         }
-        //change line
+        return true;
     }
     public Node getSuccessor(Node node){
         Node successorParent  = node;
