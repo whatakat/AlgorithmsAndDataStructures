@@ -77,4 +77,50 @@ public class Tree {
         }
         return last;
     }
+    public boolean delete(int id) {
+        Node current = root;
+        Node parent = root;
+        boolean isLeftChild = true;
+        while (current.person.id != id) {
+            parent = current;
+            if (id < current.person.id) {
+                isLeftChild = true;
+                current = current.leftChild;
+            } else {
+                isLeftChild = false;
+                current = current.rightChild;
+            }
+            if (current == null) {
+                return false;
+            }
+        }
+        if (current.leftChild == null && current.rightChild == null) {
+            if (current == root) {
+                root = null;
+            } else if (isLeftChild) {
+                parent.leftChild = null;
+            } else {
+                parent.rightChild = null;
+            }
+        } else if (current.rightChild == null) {
+            if (current == root) {
+                root = current.leftChild;
+            } else if (isLeftChild) {
+                parent.leftChild = current.leftChild;
+            } else {
+                parent.rightChild = current.leftChild;
+            }
+        } else if (current.leftChild == null) {
+            if (current == root) {
+                root = current.rightChild;
+            } else if (isLeftChild) {
+                parent.leftChild = current.rightChild;
+            } else {
+                parent.rightChild = current.rightChild;
+            }
+        }
+        //change line
+    }
+
+
 }
