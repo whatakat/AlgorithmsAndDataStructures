@@ -121,6 +121,21 @@ public class Tree {
         }
         //change line
     }
+    public Node getSuccessor(Node node){
+        Node successorParent  = node;
+        Node successor = node;
+        Node current = node.rightChild;
+        while (current!= null){
+            successorParent = successor;
+            successor = current;
+            current = current.leftChild;
+        }
+        if (successor != node.rightChild){
+            successorParent.leftChild = successor.rightChild;
+            successor.rightChild = node.rightChild
+        }
+        return successor;
+    }
 
 
 }
