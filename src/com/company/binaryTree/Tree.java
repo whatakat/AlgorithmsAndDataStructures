@@ -132,7 +132,7 @@ public class Tree {
         }
         if (successor != node.rightChild){
             successorParent.leftChild = successor.rightChild;
-            successor.rightChild = node.rightChild
+            successor.rightChild = node.rightChild;
         }
         return successor;
     }
