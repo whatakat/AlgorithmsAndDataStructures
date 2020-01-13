@@ -19,6 +19,31 @@ public class Tree {
 
     }
     public void insert(Person person){
+        Node node = new Node();
+        node.person= person;
+        if (root==null) {
+            root = node;
+        }else {
+            Node current=root;
+            Node parent;
+            while (true){
+                parent=current;
+                if (person.id<current.person.id){
+                    current=current.leftChild;
+                    if (current==null){
+                        parent.leftChild=node;
+                        return;
+                    }
+                    else{
+                        current=current.rightChild;
+                        if (current==null){
+                            parent.rightChild=node;
+                            return;
+                        }
+                    }
+                }
+            }
+        }
 
     }
     public boolean delete(int id){
