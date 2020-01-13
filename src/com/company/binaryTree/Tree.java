@@ -68,4 +68,13 @@ public class Tree {
         }
         return last;
     }
+    public Node max(){
+        Node current, last=null;
+        current = root;
+        while (current!=null){
+            last = current;
+            current = current.rightChild;
+        }
+        return last;
+    }
 }
