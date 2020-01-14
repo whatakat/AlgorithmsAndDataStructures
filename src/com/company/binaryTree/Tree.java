@@ -1,5 +1,7 @@
 package com.company.binaryTree;
 
+import com.company.stack.Stack;
+
 public class Tree {
     private Node root;
 
@@ -44,9 +46,6 @@ public class Tree {
                 }
             }
         }
-
-    }
-    public void displayTree(){
 
     }
 
@@ -168,6 +167,8 @@ public class Tree {
             rootNode.display();
             inOrder(rootNode.rightChild);
         }
+    }
+    public void displayTree(){
 
     }
 
