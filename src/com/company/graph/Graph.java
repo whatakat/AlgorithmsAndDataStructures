@@ -1,5 +1,6 @@
 package com.company.graph;
 
+
 public class Graph {
     private final int MAX_VERTS = 32;
     private Vertex[] vertexList;
@@ -24,5 +25,13 @@ public class Graph {
     }
     public void displayVertex(int vertex){
         System.out.println(vertexList[vertex]);
+    }
+    public int getAdjUnvisitedVertex(int ver ){
+        for (int i = 0; i <size ; i++) {
+            if (adjMat[ver][i]==1 && vertexList[i].wasVisited==false){
+                return i;
+            }
+        }
+        return -1;
     }
 }
