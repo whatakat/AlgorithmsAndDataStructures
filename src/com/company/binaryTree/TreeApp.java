@@ -1,6 +1,8 @@
 package com.company.binaryTree;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class TreeApp {
     public static void main(String[] args) throws IOException {
@@ -39,6 +41,12 @@ public class TreeApp {
                     break;
             }
         }
+    }
+    public static String getString() throws IOException{
+        InputStreamReader ist = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(ist);
+        String s = br.readLine();
+        return s;
     }
 
 }
