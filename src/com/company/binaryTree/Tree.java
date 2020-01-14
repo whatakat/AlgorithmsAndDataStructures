@@ -49,13 +49,7 @@ public class Tree {
     public void displayTree(){
 
     }
-    private void inOrder(Node rootNode){
-        if (rootNode!=null){
-            inOrder(rootNode.leftChild);
-            rootNode.display();
-            inOrder(rootNode.rightChild);
-        }
-    }
+
     public Node min(){
         Node current, last = null;
         current = root;
@@ -144,6 +138,37 @@ public class Tree {
             successor.rightChild = node.rightChild;
         }
         return successor;
+    }
+
+    public void traverse(int traverseType){
+        switch (traverseType){
+            case 1:
+                System.out.println("Preorder traversal");
+                preOrder(root);
+                break;
+        }
+    }
+    private void preOrder(Node rootNode){
+        if (rootNode != null){
+            rootNode.display();
+            preOrder(rootNode.leftChild);
+            preOrder(rootNode.rightChild);
+        }
+    }
+    private void postOrder(Node rootNode){
+        if (rootNode != null){
+            postOrder(rootNode.leftChild);
+            postOrder(rootNode.rightChild);
+            rootNode.display();
+        }
+    }
+    private void inOrder(Node rootNode){
+        if (rootNode !=null){
+            inOrder(rootNode.leftChild);
+            rootNode.display();
+            inOrder(rootNode.rightChild);
+        }
+
     }
 
 
