@@ -26,7 +26,7 @@ public class TreeApp {
                     break;
                 case 'i':
                     System.out.println("Enter value to insert: ");
-                    value = getint();
+                    value = getInt();
                     theTree.insert(new Person());
                     break;
                 case 'f':
