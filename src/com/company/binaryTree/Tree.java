@@ -1,7 +1,5 @@
 package com.company.binaryTree;
 
-import com.company.stack.Stack;
-
 public class Tree {
     private Node root;
 
@@ -169,6 +167,41 @@ public class Tree {
         }
     }
     public void displayTree(){
+        Stack stack = new Stack(100);
+        stack.push(root);
+        int nBlancks = 32;
+        boolean isRowEmpty = false;
+        while (isRowEmpty){
+            Stack localStack = new Stack(100);
+            isRowEmpty = true;
+            for (int i = 0; i <nBlancks ; i++) {
+                System.out.println(" ");
+            }
+            while (!stack.isEmpty()){
+                Node temp  = stack.pop();
+                if (temp != null){
+                    temp.display();
+                    localStack.push(temp.leftChild);
+                    localStack.push(temp.rightChild);
+                    if (temp.leftChild != null || temp.rightChild !=null){
+                        isRowEmpty = false;
+                    }
+                }else {
+                    System.out.println("--");
+                    localStack.push(null);
+                    localStack.push(null);
+                }
+                for (int j = 0; j <nBlancks*2 - 2 ; j++) {
+                    System.out.println(' ');
+                }
+                System.out.println(" ");
+                nBlancks = nBlancks/2;
+                while (!localStack.isEmpty()){
+                    stack.push(localStack.pop());
+                }
+                System.out.println("....................................................");
+            }
+        }
 
     }
 
