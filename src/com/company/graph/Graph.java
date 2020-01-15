@@ -11,6 +11,7 @@ public class Graph {
     private Stack stack;
     private Queue queue;
     public Graph(){
+        queue = new Queue(MAX_VERTS);
         stack = new Stack(MAX_VERTS);
         vertexList = new Vertex[MAX_VERTS];
         adjMat = new int[MAX_VERTS][MAX_VERTS];

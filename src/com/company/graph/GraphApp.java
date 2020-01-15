@@ -14,7 +14,7 @@ public class GraphApp {
         graph.addEdge(0,3);//AD
         graph.addEdge(3,4);//DE
 
-        graph.dfs();
+        graph.bfs();
 
 
     }
