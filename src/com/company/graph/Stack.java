@@ -5,7 +5,7 @@ public class Stack {
     private int[] stackArr;
     private int top;
 
-    private Stack(int size){
+    public Stack(int size){
         this.maxSize = size;
         this.stackArr = new int[size];
         this.top = -1;
