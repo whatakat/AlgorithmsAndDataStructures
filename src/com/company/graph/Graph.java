@@ -1,12 +1,15 @@
 package com.company.graph;
 
 
+import com.company.queues.Queue;
+
 public class Graph {
     private final int MAX_VERTS = 32;
     private Vertex[] vertexList;
     private int[][] adjMat;
     private int size;
     private Stack stack;
+    private Queue queue;
     public Graph(){
         stack = new Stack(MAX_VERTS);
         vertexList = new Vertex[MAX_VERTS];
@@ -36,6 +39,7 @@ public class Graph {
         }
         return -1;
     }
+    // long walk
     public void dfs(){
         vertexList[0].wasVisited=true;
         displayVertex(0);
@@ -54,5 +58,23 @@ public class Graph {
             vertexList[i].wasVisited=false;
 
         }
+    }
+    //wide walk
+    public void bfs(){
+        vertexList[0].wasVisited = true;
+        displayVertex(0);
+        queue.insert(0);
+        int v2;
+        while (!queue.isEmpty()){
+            int v1 = queue.remove();
+            while ((v2 = getAdjUnvisitedVertex(v1)) != -1){
+                vertexList[v2].wasVisited = true;
+                displayVertex(v2);
+                queue.insert(v2);
+            }
+        }
+        for (int i = 0; i < size; i++)
+            vertexList[i].wasVisited = false;
+
     }
 }
