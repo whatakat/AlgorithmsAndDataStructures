@@ -1,4 +1,4 @@
-package com.company.tableHash;
+package com.company.hashTable;
 
 public class HashTable {
     private Item[] hashArr;
