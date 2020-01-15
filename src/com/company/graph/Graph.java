@@ -7,7 +7,7 @@ public class Graph {
     private int[][] adjMat;
     private int size;
     private Stack stack;
-    private Graph(){
+    public Graph(){
         stack = new Stack(MAX_VERTS);
         vertexList = new Vertex[MAX_VERTS];
         adjMat = new int[MAX_VERTS][MAX_VERTS];
