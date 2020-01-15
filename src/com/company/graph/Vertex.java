@@ -7,4 +7,7 @@ public class Vertex {
         this.label = label;
         this.wasVisited = false;
     }
+    public String toString(){
+        return "vertex "+label;
+    }
 }
