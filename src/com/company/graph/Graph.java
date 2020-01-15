@@ -6,6 +6,7 @@ public class Graph {
     private Vertex[] vertexList;
     private int[][] adjMat;
     private int size;
+    private Stack stack;
     private Graph(){
         vertexList = new Vertex[MAX_VERTS];
         adjMat = new int[MAX_VERTS][MAX_VERTS];
@@ -33,5 +34,24 @@ public class Graph {
             }
         }
         return -1;
+    }
+    public void dfs(){
+        vertexList[0].wasVisited=true;
+        displayVertex(0);
+        stack.push(0);
+        while (!stack.isEmpty()){
+            int v =getAdjUnvisitedVertex(stack.peek());
+            if (v==-1){
+                stack.pop();
+            }else {
+                vertexList[v].wasVisited=true;
+                displayVertex(v);
+                stack.push(v);
+            }
+        }
+        for (int i = 0; i <size ; i++) {
+            vertexList[i].wasVisited=false;
+
+        }
     }
 }
