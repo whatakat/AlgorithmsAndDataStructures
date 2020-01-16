@@ -18,4 +18,7 @@ public class HashTable {
             }
         }
     }
+    public int hashFunc(int key){
+        return key%=arrSize;
+    }
 }
