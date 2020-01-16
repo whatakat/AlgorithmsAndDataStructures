@@ -21,4 +21,13 @@ public class HashTable {
     public int hashFunc(int key){
         return key%=arrSize;
     }
+    public void insert(Item item){
+        int key = item.getKey();
+        int hashVal = hashFunc(key);
+        while (hashArr[hashVal] != null && hashArr[hashVal].getKey()!= -1){
+            ++hashVal;
+            hashVal%=arrSize;
+        }
+        hashArr[hashVal] = item;
+    }
 }
