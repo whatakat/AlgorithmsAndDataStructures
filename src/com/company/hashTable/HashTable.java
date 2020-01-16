@@ -27,8 +27,9 @@ public class HashTable {
     public void insert(Item item){
         int key = item.getKey();
         int hashVal = hashFunc(key);
+        int stepSize = hashFuncDouble(key);
         while (hashArr[hashVal] != null && hashArr[hashVal].getKey()!= -1){
-            ++hashVal;
+            hashVal+= stepSize;
             hashVal%=arrSize;
         }
         hashArr[hashVal] = item;
