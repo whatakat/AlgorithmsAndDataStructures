@@ -22,6 +22,10 @@ public class HashApp {
         BufferedReader br = new BufferedReader(isr);
         String s = br.readLine();
         return s;
+    }
+    public static char getChar() throws IOException{
+        String s = getString();
+        return s.charAt(0);
 
     }
     public static int getInt() throws IOException{
