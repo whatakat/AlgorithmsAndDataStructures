@@ -43,4 +43,15 @@ public class HashTable {
         }
         return null;
     }
+    public Item find(int key){
+        int hashVal = hashFunc(key);
+        while (hashArr[hashVal]!=null){
+            if (hashArr[hashVal].getKey()==key){
+                return hashArr[hashVal];
+            }
+            ++hashVal;
+            hashVal%=arrSize;
+        }
+        return null;
+    }
 }
