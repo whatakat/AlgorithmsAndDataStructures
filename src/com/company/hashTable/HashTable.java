@@ -30,4 +30,17 @@ public class HashTable {
         }
         hashArr[hashVal] = item;
     }
+    public Item delete(int key){
+        int hashVal = hashFunc(key);
+        while (hashArr[hashVal]!=null){
+            if (hashArr[hashVal].getKey()==key){
+                Item temp = hashArr[hashVal];
+                hashArr[hashVal]=nonItem;
+                return temp;
+            }
+            ++hashVal;
+            hashVal%=arrSize;
+        }
+        return null;
+    }
 }
