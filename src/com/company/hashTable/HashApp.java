@@ -10,7 +10,13 @@ public class HashApp {
         size = getInt();
         System.out.println("Enter initial number of items: ");
         n = getInt();
-        keysPerCell =10;
 
+
+
+
+    }
+    public int getInt() throws IOException{
+        String s = getString();
+        return Integer.parseInt(s);
     }
 }
