@@ -21,6 +21,9 @@ public class HashTable {
     public int hashFunc(int key){
         return key%=arrSize;
     }
+    public int hashFuncDouble(int key){
+        return 5 - key % 5;
+    }
     public void insert(Item item){
         int key = item.getKey();
         int hashVal = hashFunc(key);
